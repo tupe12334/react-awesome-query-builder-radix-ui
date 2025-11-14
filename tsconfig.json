@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "jsx": "preserve",
+    "lib": ["es2020", "dom", "dom.iterable"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "declarationDir": "./types",
+    "outDir": "./lib",
+    "baseUrl": ".",
+    "paths": {
+      "@react-awesome-query-builder/ui": ["node_modules/@react-awesome-query-builder/ui"],
+      "@react-awesome-query-builder/core": ["node_modules/@react-awesome-query-builder/core"]
+    }
+  },
+  "include": [
+    "modules/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "esm",
+    "cjs",
+    "types",
+    "**/*.test.js",
+    "**/*.test.jsx",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ]
+}
