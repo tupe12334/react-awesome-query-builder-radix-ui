@@ -4,6 +4,9 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  base: process.env.GITHUB_PAGES
+    ? "/react-awesome-query-builder-radix-ui/"
+    : "/",
   resolve: {
     alias: {
       "@react-awesome-query-builder/radix-ui": path.resolve(
@@ -11,6 +14,10 @@ export default defineConfig({
         "../modules/index.jsx"
       ),
     },
+  },
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
   },
   server: {
     port: 3000,
