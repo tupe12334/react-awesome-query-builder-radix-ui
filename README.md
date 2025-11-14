@@ -1,4 +1,4 @@
-# @react-awesome-query-builder/radix-ui
+# react-awesome-query-builder-radix-ui
 
 <p align="center">
   <a href="https://www.radix-ui.com/" target="_blank"><img src="https://avatars.githubusercontent.com/u/75042455?s=200&v=4" width="100" alt="Radix UI Logo" /></a>
@@ -28,7 +28,7 @@
 ## Installation
 
 ```bash
-npm install @react-awesome-query-builder/radix-ui
+npm install react-awesome-query-builder-radix-ui
 ```
 
 ### Peer Dependencies
@@ -45,7 +45,7 @@ npm install @radix-ui/react-select @radix-ui/react-switch @radix-ui/react-slider
 Or install all at once:
 
 ```bash
-npm install @react-awesome-query-builder/radix-ui \
+npm install react-awesome-query-builder-radix-ui \
   @radix-ui/react-{select,switch,slider,checkbox,toggle,toggle-group,dialog,popover,dropdown-menu,icons}
 ```
 
@@ -58,8 +58,8 @@ import {
   Builder,
   Utils as QbUtils,
   RadixConfig,
-} from "@react-awesome-query-builder/radix-ui";
-import "@react-awesome-query-builder/radix-ui/css/styles.css";
+} from "react-awesome-query-builder-radix-ui";
+import "react-awesome-query-builder-radix-ui/css/styles.css";
 
 const config = {
   ...RadixConfig,
@@ -242,7 +242,7 @@ const config = {
 ### Export to Multiple Formats
 
 ```jsx
-import { Utils as QbUtils } from "@react-awesome-query-builder/radix-ui";
+import { Utils as QbUtils } from "react-awesome-query-builder-radix-ui";
 
 // SQL
 const sql = QbUtils.sqlFormat(tree, config);
@@ -294,7 +294,7 @@ const { fixedTree, fixedErrors, nonFixedErrors } = QbUtils.sanitizeTree(
 ### Confirmation Dialogs
 
 ```jsx
-import { useRadixConfirm } from "@react-awesome-query-builder/radix-ui";
+import { useRadixConfirm } from "react-awesome-query-builder-radix-ui";
 
 function MyComponent() {
   const [confirm, ConfirmDialog] = useRadixConfirm();
@@ -351,7 +351,7 @@ Full TypeScript support is included:
 import type {
   Config,
   ImmutableTree,
-} from "@react-awesome-query-builder/radix-ui";
+} from "react-awesome-query-builder-radix-ui";
 
 const config: Config = {
   // ...

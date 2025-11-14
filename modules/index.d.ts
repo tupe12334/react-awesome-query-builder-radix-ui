@@ -1,12 +1,12 @@
 /**
- * Type definitions for @react-awesome-query-builder/radix-ui
+ * Type definitions for react-awesome-query-builder-radix-ui
  */
 
 // Re-export all types from @react-awesome-query-builder/ui
-export * from "@react-awesome-query-builder/ui";
-
 import type { Config, Widgets } from "@react-awesome-query-builder/ui";
 import type { ReactElement } from "react";
+
+export * from "@react-awesome-query-builder/ui";
 
 // Radix UI specific exports
 export interface RadixWidgets extends Widgets {

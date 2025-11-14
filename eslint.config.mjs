@@ -61,6 +61,7 @@ export default [
       "*.config.mjs",
       ".eslintrc.js",
       "example/**",
+      "scripts/**",
     ],
   },
 ];

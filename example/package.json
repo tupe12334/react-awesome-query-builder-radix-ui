@@ -19,7 +19,7 @@
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-toggle": "^1.0.3",
     "@radix-ui/react-toggle-group": "^1.0.4",
-    "@react-awesome-query-builder/radix-ui": "file:..",
+    "react-awesome-query-builder-radix-ui": "file:..",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

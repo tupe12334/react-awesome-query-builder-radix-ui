@@ -1,5 +1,5 @@
 /**
- * @react-awesome-query-builder/radix-ui
+ * react-awesome-query-builder-radix-ui
  *
  * Radix UI widgets for react-awesome-query-builder
  */

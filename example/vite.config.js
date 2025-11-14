@@ -9,7 +9,7 @@ export default defineConfig({
     : "/",
   resolve: {
     alias: {
-      "@react-awesome-query-builder/radix-ui": path.resolve(
+      "react-awesome-query-builder-radix-ui": path.resolve(
         __dirname,
         "../modules/index.jsx"
       ),

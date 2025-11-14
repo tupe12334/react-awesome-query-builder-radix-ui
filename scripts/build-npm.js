@@ -9,7 +9,7 @@ const cjsDir = path.join(rootDir, "cjs");
 const esmDir = path.join(rootDir, "esm");
 const typesDir = path.join(rootDir, "types");
 
-console.log("Building @react-awesome-query-builder/radix-ui...");
+console.log("Building react-awesome-query-builder-radix-ui...");
 
 // Clean previous builds
 console.log("Cleaning previous builds...");

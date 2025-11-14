@@ -4,7 +4,7 @@ import {
   Builder,
   Utils as QbUtils,
   RadixConfig,
-} from "@react-awesome-query-builder/radix-ui";
+} from "react-awesome-query-builder-radix-ui";
 import "../css/styles.css";
 
 // Define your fields
