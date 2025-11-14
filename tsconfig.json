@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": false,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -18,13 +18,15 @@
     "outDir": "./lib",
     "baseUrl": ".",
     "paths": {
-      "@react-awesome-query-builder/ui": ["node_modules/@react-awesome-query-builder/ui"],
-      "@react-awesome-query-builder/core": ["node_modules/@react-awesome-query-builder/core"]
+      "@react-awesome-query-builder/ui": [
+        "node_modules/@react-awesome-query-builder/ui"
+      ],
+      "@react-awesome-query-builder/core": [
+        "node_modules/@react-awesome-query-builder/core"
+      ]
     }
   },
-  "include": [
-    "modules/**/*"
-  ],
+  "include": ["modules/**/*"],
   "exclude": [
     "node_modules",
     "build",

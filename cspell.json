@@ -1,0 +1,41 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "radix",
+    "reactjs",
+    "classnames",
+    "lodash",
+    "Ofek",
+    "Gabay",
+    "tupe",
+    "pnpm",
+    "eslint",
+    "tsconfig",
+    "esbenp",
+    "husky",
+    "esmodule",
+    "checkboxes",
+    "dropdowns",
+    "popovers",
+    "sliders",
+    "Conjs",
+    "conjs",
+    "rangeslider",
+    "grouplabel",
+    "WCAG",
+    "spel"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "build",
+    "cjs",
+    "esm",
+    "types",
+    "coverage",
+    "pnpm-lock.yaml",
+    "*.min.js",
+    "example"
+  ]
+}

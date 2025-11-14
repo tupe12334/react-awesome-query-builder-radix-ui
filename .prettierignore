@@ -1,0 +1,9 @@
+dist
+build
+cjs
+esm
+types
+node_modules
+coverage
+*.min.js
+pnpm-lock.yaml
