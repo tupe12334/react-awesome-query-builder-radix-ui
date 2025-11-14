@@ -3,13 +3,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
 
 export default function RadixConfirm(props) {
-  const {
-    onOk,
-    okText,
-    cancelText,
-    title,
-    children,
-  } = props;
+  const { onOk, okText, cancelText, title, children } = props;
 
   const [open, setOpen] = useState(true);
 
@@ -66,7 +60,7 @@ export function useRadixConfirm() {
   const [confirmState, setConfirmState] = useState(null);
 
   const confirm = ({ title, content, onOk, onCancel, okText, cancelText }) => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       setConfirmState({
         title,
         content,

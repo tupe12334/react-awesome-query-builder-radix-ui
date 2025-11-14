@@ -20,45 +20,56 @@ console.log("Cleaning previous builds...");
 });
 
 // Find all source files
-const sourceFiles = globbySync([
-  "modules/**/*.{js,jsx,ts,tsx}",
-  "!modules/**/*.test.{js,jsx,ts,tsx}",
-  "!modules/**/__tests__/**"
-], { cwd: rootDir });
+const sourceFiles = globbySync(
+  [
+    "modules/**/*.{js,jsx,ts,tsx}",
+    "!modules/**/*.test.{js,jsx,ts,tsx}",
+    "!modules/**/__tests__/**",
+  ],
+  { cwd: rootDir }
+);
 
 console.log(`Found ${sourceFiles.length} source files`);
 
 // Build CJS
 console.log("\nBuilding CommonJS...");
-execSync(`babel ${modulesDir} --out-dir ${cjsDir} --extensions ".js,.jsx,.ts,.tsx" --ignore "**/*.d.ts" --copy-files`, {
-  cwd: rootDir,
-  stdio: "inherit",
-  env: {
-    ...process.env,
-    BABEL_ENV: "cjs"
+execSync(
+  `babel ${modulesDir} --out-dir ${cjsDir} --extensions ".js,.jsx,.ts,.tsx" --ignore "**/*.d.ts" --copy-files`,
+  {
+    cwd: rootDir,
+    stdio: "inherit",
+    env: {
+      ...process.env,
+      BABEL_ENV: "cjs",
+    },
   }
-});
+);
 
 // Build ESM
 console.log("\nBuilding ES Modules...");
-execSync(`babel ${modulesDir} --out-dir ${esmDir} --extensions ".js,.jsx,.ts,.tsx" --ignore "**/*.d.ts" --copy-files`, {
-  cwd: rootDir,
-  stdio: "inherit",
-  env: {
-    ...process.env,
-    BABEL_ENV: "esm"
+execSync(
+  `babel ${modulesDir} --out-dir ${esmDir} --extensions ".js,.jsx,.ts,.tsx" --ignore "**/*.d.ts" --copy-files`,
+  {
+    cwd: rootDir,
+    stdio: "inherit",
+    env: {
+      ...process.env,
+      BABEL_ENV: "esm",
+    },
   }
-});
+);
 
 // Generate TypeScript definitions
 console.log("\nGenerating TypeScript definitions...");
 try {
   execSync("npm run tsc-emit-types", {
     cwd: rootDir,
-    stdio: "inherit"
+    stdio: "inherit",
   });
 } catch (error) {
-  console.warn("Warning: TypeScript definitions generation had errors, but continuing...");
+  console.warn(
+    "Warning: TypeScript definitions generation had errors, but continuing..."
+  );
 }
 
 console.log("\nBuild completed successfully!");

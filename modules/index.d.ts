@@ -44,5 +44,5 @@ export function useRadixConfirm(): [
     okText?: string;
     cancelText?: string;
   }) => Promise<boolean>,
-  ReactElement | null
+  ReactElement | null,
 ];

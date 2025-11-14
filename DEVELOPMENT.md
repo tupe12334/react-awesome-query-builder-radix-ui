@@ -73,19 +73,13 @@ Example widget:
 import React from "react";
 
 export default function MyCustomWidget(props) {
-  const {
-    value,
-    setValue,
-    config,
-    readonly,
-    customProps,
-  } = props;
+  const { value, setValue, config, readonly, customProps } = props;
 
   return (
     <input
       type="text"
       value={value || ""}
-      onChange={(e) => setValue(e.target.value)}
+      onChange={e => setValue(e.target.value)}
       disabled={readonly}
       {...customProps}
     />

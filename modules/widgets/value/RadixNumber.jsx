@@ -13,7 +13,7 @@ export default function RadixNumber(props) {
     customProps,
   } = props;
 
-  const onChange = (e) => {
+  const onChange = e => {
     let val = e.target.value;
     if (val === "" || val === null) {
       setValue(undefined);

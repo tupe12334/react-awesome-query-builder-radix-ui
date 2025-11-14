@@ -2,14 +2,8 @@ import React from "react";
 import * as ToggleGroup from "@radix-ui/react-toggle-group";
 
 export default function RadixValueSources(props) {
-  const {
-    config,
-    valueSources,
-    valueSrc,
-    setValueSrc,
-    readonly,
-    title,
-  } = props;
+  const { config, valueSources, valueSrc, setValueSrc, readonly, title } =
+    props;
 
   const renderOptions = () => {
     return valueSources.map(([srcKey, info]) => {
@@ -29,7 +23,8 @@ export default function RadixValueSources(props) {
     });
   };
 
-  const popupTitle = title || config?.settings?.valueSourcesPopupTitle || "Select value source";
+  const popupTitle =
+    title || config?.settings?.valueSourcesPopupTitle || "Select value source";
 
   if (valueSources.length < 2) {
     return null;
@@ -40,7 +35,7 @@ export default function RadixValueSources(props) {
       <ToggleGroup.Root
         type="single"
         value={valueSrc}
-        onValueChange={(value) => {
+        onValueChange={value => {
           if (value) setValueSrc(value);
         }}
         className="qb-radix-value-source-group"

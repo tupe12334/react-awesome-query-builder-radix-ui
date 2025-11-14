@@ -1,6 +1,10 @@
 import React from "react";
 import * as Select from "@radix-ui/react-select";
-import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@radix-ui/react-icons";
 import PropTypes from "prop-types";
 import mapValues from "lodash/mapValues";
 
@@ -18,19 +22,20 @@ export default function RadixFieldSelect(props) {
   const renderSelectItems = (fields, level = 0) => {
     return Object.keys(fields).map(fieldKey => {
       const field = fields[fieldKey];
-      const {items, path, label, disabled, grouplabel} = field;
+      const { items, path, label, disabled, grouplabel } = field;
       const prefix = "\u00A0\u00A0".repeat(level);
 
       if (items) {
         const simpleItems = mapValues(items, (item, itemKey) => ({
           ...item,
-          disabled: disabled
+          disabled: disabled,
         }));
         return (
           <Select.Group key={path}>
             {grouplabel && (
               <Select.Label className="qb-radix-select-label">
-                {prefix}{grouplabel}
+                {prefix}
+                {grouplabel}
               </Select.Label>
             )}
             {renderSelectItems(simpleItems, level + 1)}
@@ -44,7 +49,10 @@ export default function RadixFieldSelect(props) {
             disabled={disabled}
             className="qb-radix-select-item"
           >
-            <Select.ItemText>{prefix}{label}</Select.ItemText>
+            <Select.ItemText>
+              {prefix}
+              {label}
+            </Select.ItemText>
             <Select.ItemIndicator className="qb-radix-select-item-indicator">
               <CheckIcon />
             </Select.ItemIndicator>
@@ -54,7 +62,8 @@ export default function RadixFieldSelect(props) {
     });
   };
 
-  const placeholderText = placeholder || config?.settings?.fieldPlaceholder || "Select field";
+  const placeholderText =
+    placeholder || config?.settings?.fieldPlaceholder || "Select field";
 
   return (
     <Select.Root
@@ -62,7 +71,10 @@ export default function RadixFieldSelect(props) {
       onValueChange={setField}
       disabled={readonly}
     >
-      <Select.Trigger className="qb-radix-select-trigger" aria-label="Select field">
+      <Select.Trigger
+        className="qb-radix-select-trigger"
+        aria-label="Select field"
+      >
         <Select.Value placeholder={placeholderText} />
         <Select.Icon className="qb-radix-select-icon">
           <ChevronDownIcon />
@@ -70,7 +82,11 @@ export default function RadixFieldSelect(props) {
       </Select.Trigger>
 
       <Select.Portal>
-        <Select.Content className="qb-radix-select-content" position="popper" sideOffset={5}>
+        <Select.Content
+          className="qb-radix-select-content"
+          position="popper"
+          sideOffset={5}
+        >
           <Select.ScrollUpButton className="qb-radix-select-scroll-button">
             <ChevronUpIcon />
           </Select.ScrollUpButton>

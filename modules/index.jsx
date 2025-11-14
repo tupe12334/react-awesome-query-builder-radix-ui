@@ -11,7 +11,4 @@ import * as RadixWidgets from "./widgets";
 export * from "@react-awesome-query-builder/ui";
 
 // Export Radix-specific items
-export {
-  RadixConfig,
-  RadixWidgets,
-};
+export { RadixConfig, RadixWidgets };

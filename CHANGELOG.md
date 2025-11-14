@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2025-01-XX
 
 ### Added
+
 - Initial release of @react-awesome-query-builder/radix-ui
 - Core widgets:
   - RadixButton - Action buttons with primary/danger variants
@@ -34,6 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Comprehensive documentation
 
 ### Features
+
 - Built with Radix UI primitives for accessibility
 - Fully compatible with react-awesome-query-builder v6.7.0+
 - Supports all export formats (SQL, MongoDB, JsonLogic, SpEL)

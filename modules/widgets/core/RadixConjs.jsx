@@ -20,14 +20,14 @@ export default function RadixConjs(props) {
   const forceShowConj = config?.settings?.forceShowConj;
 
   const renderOptions = () => {
-    const {conjunctions} = config;
+    const { conjunctions } = config;
     return Object.keys(conjunctionOptions).map(key => {
-      const {id, name, label, checked} = conjunctionOptions[key];
+      const { id, name, label, checked } = conjunctionOptions[key];
       const postfix = setConjunction.isDummyFn ? "__dummy" : "";
 
       return (
         <ToggleGroup.Item
-          key={id+postfix}
+          key={id + postfix}
           value={key}
           disabled={readonly || disabled}
           className="qb-radix-conj-item"
@@ -50,7 +50,7 @@ export default function RadixConjs(props) {
           id={id}
           checked={not}
           disabled={readonly}
-          onChange={(e) => setNot(e.target.checked)}
+          onChange={e => setNot(e.target.checked)}
         />
         <span>{notLabel}</span>
       </label>
@@ -62,7 +62,7 @@ export default function RadixConjs(props) {
       <ToggleGroup.Root
         type="single"
         value={selectedConjunction}
-        onValueChange={(value) => {
+        onValueChange={value => {
           if (value) setConjunction(value);
         }}
         className="qb-radix-conj-group"

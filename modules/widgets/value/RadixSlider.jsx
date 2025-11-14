@@ -14,7 +14,7 @@ export default function RadixSlider(props) {
     customProps,
   } = props;
 
-  const onChange = (values) => {
+  const onChange = values => {
     setValue(values[0]);
   };
 

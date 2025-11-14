@@ -29,21 +29,21 @@ const {
 const settings = {
   ...BasicConfig.settings,
   renderSize: "medium",
-  renderButton: (props) => <RadixButton {...props} />,
+  renderButton: props => <RadixButton {...props} />,
   renderIcon: (props, ctx) => {
-    const {type} = props;
+    const { type } = props;
     return <RadixIcon type={type} />;
   },
-  renderButtonGroup: (props) => <RadixButtonGroup {...props} />,
+  renderButtonGroup: props => <RadixButtonGroup {...props} />,
   renderConjs: (props, ctx) => <RadixConjs {...props} />,
-  renderSwitch: (props) => null, // Not implemented for radix, using checkbox in conjs
-  renderProvider: (props) => props.children,
+  renderSwitch: props => null, // Not implemented for radix, using checkbox in conjs
+  renderProvider: props => props.children,
   renderValueSources: (props, ctx) => <RadixValueSources {...props} />,
   renderFieldSources: (props, ctx) => <RadixValueSources {...props} />,
   renderOperator: (props, ctx) => <RadixFieldSelect {...props} />,
   renderFunc: (props, ctx) => <RadixFieldSelect {...props} />,
   renderField: (props, ctx) => <RadixFieldSelect {...props} />,
-  renderConfirm: (props) => <RadixConfirm {...props} />,
+  renderConfirm: props => <RadixConfirm {...props} />,
   useConfirm: useRadixConfirm,
 };
 
@@ -124,12 +124,19 @@ const widgets = {
     factory: (props, ctx) => <RadixPrice {...props} />,
     formatValue: (val, fieldDef, wgtDef, isForDisplay) => {
       if (val === undefined || val === null) return undefined;
-      const decimalSeparator = fieldDef?.fieldSettings?.decimalSeparator || wgtDef?.decimalSeparator || ".";
-      const thousandSeparator = fieldDef?.fieldSettings?.thousandSeparator || wgtDef?.thousandSeparator || ",";
+      const decimalSeparator =
+        fieldDef?.fieldSettings?.decimalSeparator ||
+        wgtDef?.decimalSeparator ||
+        ".";
+      const thousandSeparator =
+        fieldDef?.fieldSettings?.thousandSeparator ||
+        wgtDef?.thousandSeparator ||
+        ",";
       const prefix = fieldDef?.fieldSettings?.prefix || wgtDef?.prefix || "";
       const suffix = fieldDef?.fieldSettings?.suffix || wgtDef?.suffix || "";
 
-      const formattedNumber = val.toString()
+      const formattedNumber = val
+        .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, thousandSeparator);
 
       return isForDisplay

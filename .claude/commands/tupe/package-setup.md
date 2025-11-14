@@ -216,25 +216,25 @@ fi
 ### Step 1: Create vitest.config.ts
 
 ```typescript
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
     globals: true,
-    environment: 'node',
+    environment: "node",
     coverage: {
-      provider: 'v8',
-      reporter: ['text', 'json', 'html'],
+      provider: "v8",
+      reporter: ["text", "json", "html"],
       exclude: [
-        'node_modules/',
-        'dist/',
-        '**/*.spec.ts',
-        '**/*.config.ts',
-        'coverage/',
+        "node_modules/",
+        "dist/",
+        "**/*.spec.ts",
+        "**/*.config.ts",
+        "coverage/",
       ],
     },
   },
-})
+});
 ```
 
 ### Step 2: Create Example Test Structure
@@ -242,14 +242,14 @@ export default defineConfig({
 Create an example test file next to the source file `src/index.spec.ts`:
 
 ```typescript
-import { describe, it, expect } from 'vitest'
-import { hello } from './index.js'
+import { describe, it, expect } from "vitest";
+import { hello } from "./index.js";
 
-describe('hello', () => {
-  it('should return greeting with name', () => {
-    expect(hello('World')).toBe('Hello, World!')
-  })
-})
+describe("hello", () => {
+  it("should return greeting with name", () => {
+    expect(hello("World")).toBe("Hello, World!");
+  });
+});
 ```
 
 **Note**: Following DDD principles, test files (`.spec.ts`) should be placed next to their corresponding logic files, not in a separate `__tests__/` directory.
@@ -263,29 +263,29 @@ describe('hello', () => {
 **For publishable packages**:
 
 ```javascript
-import agentConfig from 'eslint-config-agent'
-import publishablePackageJson from 'eslint-config-publishable-package-json'
+import agentConfig from "eslint-config-agent";
+import publishablePackageJson from "eslint-config-publishable-package-json";
 
 export default [
   ...agentConfig,
   ...publishablePackageJson,
   {
-    ignores: ['dist/**', 'node_modules/**', '*.config.js', '*.config.mjs'],
+    ignores: ["dist/**", "node_modules/**", "*.config.js", "*.config.mjs"],
   },
-]
+];
 ```
 
 **For internal packages**:
 
 ```javascript
-import agentConfig from 'eslint-config-agent'
+import agentConfig from "eslint-config-agent";
 
 export default [
   ...agentConfig,
   {
-    ignores: ['dist/**', 'node_modules/**', '*.config.js', '*.config.mjs'],
+    ignores: ["dist/**", "node_modules/**", "*.config.js", "*.config.mjs"],
   },
-]
+];
 ```
 
 **What each config does**:
@@ -539,7 +539,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -602,8 +602,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-          registry-url: 'https://registry.npmjs.org'
+          cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         if: steps.version_check.outputs.should_publish == 'true'
@@ -666,7 +666,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

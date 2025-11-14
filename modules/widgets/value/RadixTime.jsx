@@ -17,7 +17,7 @@ export default function RadixTime(props) {
   const formatValue = valueFormat || "HH:mm:ss";
   const displayFormat = timeFormat || "HH:mm";
 
-  const onChange = (e) => {
+  const onChange = e => {
     const val = e.target.value;
     if (!val) {
       setValue(undefined);
@@ -28,9 +28,7 @@ export default function RadixTime(props) {
   };
 
   // Convert internal format to input format
-  const inputValue = value
-    ? moment(value, formatValue).format("HH:mm")
-    : "";
+  const inputValue = value ? moment(value, formatValue).format("HH:mm") : "";
 
   return (
     <input

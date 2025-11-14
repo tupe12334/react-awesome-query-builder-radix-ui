@@ -17,7 +17,7 @@ export default function RadixPrice(props) {
     allowNegative,
   } = props;
 
-  const onValueChange = (values) => {
+  const onValueChange = values => {
     const { floatValue } = values;
     if (floatValue === undefined || floatValue === null) {
       setValue(undefined);
@@ -33,7 +33,9 @@ export default function RadixPrice(props) {
       onValueChange={onValueChange}
       placeholder={placeholder}
       disabled={readonly}
-      thousandSeparator={thousandSeparator !== undefined ? thousandSeparator : ","}
+      thousandSeparator={
+        thousandSeparator !== undefined ? thousandSeparator : ","
+      }
       decimalSeparator={decimalSeparator || "."}
       decimalScale={decimalScale}
       prefix={prefix}

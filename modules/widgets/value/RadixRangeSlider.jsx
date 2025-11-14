@@ -16,11 +16,10 @@ export default function RadixRangeSlider(props) {
     textSeparators,
   } = props;
 
-  const [minValue, maxValue] = Array.isArray(value) && value.length === 2
-    ? value
-    : [min || 0, max || 100];
+  const [minValue, maxValue] =
+    Array.isArray(value) && value.length === 2 ? value : [min || 0, max || 100];
 
-  const onChange = (values) => {
+  const onChange = values => {
     setValue(values);
   };
 
@@ -47,8 +46,14 @@ export default function RadixRangeSlider(props) {
         <Slider.Track className="qb-radix-slider-track">
           <Slider.Range className="qb-radix-slider-range" />
         </Slider.Track>
-        <Slider.Thumb className="qb-radix-slider-thumb" aria-label="Minimum value" />
-        <Slider.Thumb className="qb-radix-slider-thumb" aria-label="Maximum value" />
+        <Slider.Thumb
+          className="qb-radix-slider-thumb"
+          aria-label="Minimum value"
+        />
+        <Slider.Thumb
+          className="qb-radix-slider-thumb"
+          aria-label="Maximum value"
+        />
       </Slider.Root>
 
       <div className="qb-radix-rangeslider-labels">

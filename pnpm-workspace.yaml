@@ -1,5 +1,5 @@
 packages:
-  - 'example'
+  - "example"
 
 onlyBuiltDependencies:
-  - '@parcel/watcher'
+  - "@parcel/watcher"

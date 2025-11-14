@@ -52,30 +52,35 @@ npm install @react-awesome-query-builder/radix-ui \
 ## Quick Start
 
 ```jsx
-import React, { useState } from 'react';
-import { Query, Builder, Utils as QbUtils, RadixConfig } from '@react-awesome-query-builder/radix-ui';
-import '@react-awesome-query-builder/radix-ui/css/styles.css';
+import React, { useState } from "react";
+import {
+  Query,
+  Builder,
+  Utils as QbUtils,
+  RadixConfig,
+} from "@react-awesome-query-builder/radix-ui";
+import "@react-awesome-query-builder/radix-ui/css/styles.css";
 
 const config = {
   ...RadixConfig,
   fields: {
     name: {
-      label: 'Name',
-      type: 'text',
+      label: "Name",
+      type: "text",
     },
     age: {
-      label: 'Age',
-      type: 'number',
+      label: "Age",
+      type: "number",
       fieldSettings: {
         min: 0,
         max: 120,
       },
     },
     premium: {
-      label: 'Premium User',
-      type: 'boolean',
+      label: "Premium User",
+      type: "boolean",
     },
-  }
+  },
 };
 
 function App() {
@@ -83,9 +88,9 @@ function App() {
     QbUtils.loadTree({ id: QbUtils.uuid(), type: "group" })
   );
 
-  const onChange = (immutableTree) => {
+  const onChange = immutableTree => {
     setTree(immutableTree);
-    console.log('Query:', QbUtils.sqlFormat(immutableTree, config));
+    console.log("Query:", QbUtils.sqlFormat(immutableTree, config));
   };
 
   return (
@@ -93,7 +98,7 @@ function App() {
       {...config}
       value={tree}
       onChange={onChange}
-      renderBuilder={(props) => (
+      renderBuilder={props => (
         <div className="query-builder qb-lite">
           <Builder {...props} />
         </div>
@@ -107,32 +112,32 @@ function App() {
 
 ### Core Widgets
 
-| Widget | Description | Radix Component |
-|--------|-------------|-----------------|
-| `RadixButton` | Action buttons | Custom styled button |
-| `RadixButtonGroup` | Button grouping | `ToggleGroup` |
-| `RadixIcon` | Icons | `@radix-ui/react-icons` |
-| `RadixConjs` | AND/OR conjunctions | `ToggleGroup` |
-| `RadixFieldSelect` | Field selector | `Select` |
-| `RadixValueSources` | Value source selector | `ToggleGroup` |
-| `RadixConfirm` | Confirmation dialogs | `Dialog` |
+| Widget              | Description           | Radix Component         |
+| ------------------- | --------------------- | ----------------------- |
+| `RadixButton`       | Action buttons        | Custom styled button    |
+| `RadixButtonGroup`  | Button grouping       | `ToggleGroup`           |
+| `RadixIcon`         | Icons                 | `@radix-ui/react-icons` |
+| `RadixConjs`        | AND/OR conjunctions   | `ToggleGroup`           |
+| `RadixFieldSelect`  | Field selector        | `Select`                |
+| `RadixValueSources` | Value source selector | `ToggleGroup`           |
+| `RadixConfirm`      | Confirmation dialogs  | `Dialog`                |
 
 ### Value Widgets
 
-| Widget | Description | Type | Radix Component |
-|--------|-------------|------|-----------------|
-| `RadixText` | Text input | `text` | Native input |
-| `RadixTextArea` | Multi-line text | `text` | Native textarea |
-| `RadixNumber` | Number input | `number` | Native input |
-| `RadixPrice` | Formatted numbers | `number` | `react-number-format` |
-| `RadixBoolean` | Boolean toggle | `boolean` | `Switch` |
-| `RadixSelect` | Single select | `select` | `Select` |
-| `RadixMultiSelect` | Multi-select | `multiselect` | `Popover` + `Checkbox` |
-| `RadixSlider` | Range slider | `number` | `Slider` |
-| `RadixRangeSlider` | Two-thumb slider | `number` | `Slider` |
-| `RadixDate` | Date picker | `date` | Native input |
-| `RadixTime` | Time picker | `time` | Native input |
-| `RadixDateTime` | Date+time picker | `datetime` | Native input |
+| Widget             | Description       | Type          | Radix Component        |
+| ------------------ | ----------------- | ------------- | ---------------------- |
+| `RadixText`        | Text input        | `text`        | Native input           |
+| `RadixTextArea`    | Multi-line text   | `text`        | Native textarea        |
+| `RadixNumber`      | Number input      | `number`      | Native input           |
+| `RadixPrice`       | Formatted numbers | `number`      | `react-number-format`  |
+| `RadixBoolean`     | Boolean toggle    | `boolean`     | `Switch`               |
+| `RadixSelect`      | Single select     | `select`      | `Select`               |
+| `RadixMultiSelect` | Multi-select      | `multiselect` | `Popover` + `Checkbox` |
+| `RadixSlider`      | Range slider      | `number`      | `Slider`               |
+| `RadixRangeSlider` | Two-thumb slider  | `number`      | `Slider`               |
+| `RadixDate`        | Date picker       | `date`        | Native input           |
+| `RadixTime`        | Time picker       | `time`        | Native input           |
+| `RadixDateTime`    | Date+time picker  | `datetime`    | Native input           |
 
 ## Customization
 
@@ -200,19 +205,19 @@ const config = {
   ...RadixConfig,
   fields: {
     price: {
-      label: 'Price',
-      type: 'number',
-      preferWidgets: ['price'], // Use price widget
+      label: "Price",
+      type: "number",
+      preferWidgets: ["price"], // Use price widget
       fieldSettings: {
-        prefix: '$',
-        thousandSeparator: ',',
+        prefix: "$",
+        thousandSeparator: ",",
         decimalScale: 2,
       },
     },
     rating: {
-      label: 'Rating',
-      type: 'number',
-      preferWidgets: ['slider'],
+      label: "Rating",
+      type: "number",
+      preferWidgets: ["slider"],
       fieldSettings: {
         min: 0,
         max: 5,
@@ -220,13 +225,13 @@ const config = {
       },
     },
     tags: {
-      label: 'Tags',
-      type: 'multiselect',
+      label: "Tags",
+      type: "multiselect",
       fieldSettings: {
         listValues: [
-          { value: 'featured', title: 'Featured' },
-          { value: 'new', title: 'New' },
-          { value: 'sale', title: 'On Sale' },
+          { value: "featured", title: "Featured" },
+          { value: "new", title: "New" },
+          { value: "sale", title: "On Sale" },
         ],
       },
     },
@@ -237,7 +242,7 @@ const config = {
 ### Export to Multiple Formats
 
 ```jsx
-import { Utils as QbUtils } from '@react-awesome-query-builder/radix-ui';
+import { Utils as QbUtils } from "@react-awesome-query-builder/radix-ui";
 
 // SQL
 const sql = QbUtils.sqlFormat(tree, config);
@@ -263,10 +268,7 @@ const es = QbUtils.elasticSearchFormat(tree, config);
 
 ```jsx
 const jsonLogic = {
-  and: [
-    { "==": [{ var: "name" }, "John"] },
-    { ">": [{ var: "age" }, 18] }
-  ]
+  and: [{ "==": [{ var: "name" }, "John"] }, { ">": [{ var: "age" }, 18] }],
 };
 
 const tree = QbUtils.loadFromJsonLogic(jsonLogic, config);
@@ -283,23 +285,26 @@ const errors = QbUtils.validateTree(tree, config);
 console.log(errors); // Array of error objects
 
 // Sanitize tree (fix errors automatically)
-const { fixedTree, fixedErrors, nonFixedErrors } = QbUtils.sanitizeTree(tree, config);
+const { fixedTree, fixedErrors, nonFixedErrors } = QbUtils.sanitizeTree(
+  tree,
+  config
+);
 ```
 
 ### Confirmation Dialogs
 
 ```jsx
-import { useRadixConfirm } from '@react-awesome-query-builder/radix-ui';
+import { useRadixConfirm } from "@react-awesome-query-builder/radix-ui";
 
 function MyComponent() {
   const [confirm, ConfirmDialog] = useRadixConfirm();
 
   const handleDelete = async () => {
     const result = await confirm({
-      title: 'Delete Rule',
-      content: 'Are you sure you want to delete this rule?',
-      okText: 'Delete',
-      cancelText: 'Cancel',
+      title: "Delete Rule",
+      content: "Are you sure you want to delete this rule?",
+      okText: "Delete",
+      cancelText: "Cancel",
     });
 
     if (result) {
@@ -343,7 +348,10 @@ For the full API, see the [react-awesome-query-builder documentation](https://gi
 Full TypeScript support is included:
 
 ```tsx
-import type { Config, ImmutableTree } from '@react-awesome-query-builder/radix-ui';
+import type {
+  Config,
+  ImmutableTree,
+} from "@react-awesome-query-builder/radix-ui";
 
 const config: Config = {
   // ...

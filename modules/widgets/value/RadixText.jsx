@@ -12,7 +12,7 @@ export default function RadixText(props) {
     maxRows,
   } = props;
 
-  const onChange = (e) => {
+  const onChange = e => {
     const val = e.target.value;
     if (val === "") {
       setValue(undefined);

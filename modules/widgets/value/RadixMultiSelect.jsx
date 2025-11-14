@@ -4,18 +4,12 @@ import * as Popover from "@radix-ui/react-popover";
 import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
 
 export default function RadixMultiSelect(props) {
-  const {
-    value,
-    setValue,
-    listValues,
-    readonly,
-    placeholder,
-    customProps,
-  } = props;
+  const { value, setValue, listValues, readonly, placeholder, customProps } =
+    props;
 
   const selectedValues = value || [];
 
-  const toggleValue = (itemValue) => {
+  const toggleValue = itemValue => {
     const newValues = selectedValues.includes(itemValue)
       ? selectedValues.filter(v => v !== itemValue)
       : [...selectedValues, itemValue];
@@ -38,7 +32,7 @@ export default function RadixMultiSelect(props) {
     if (!listValues) return null;
 
     return listValues.map(item => {
-      const {value: itemValue, title} = item;
+      const { value: itemValue, title } = item;
       const isChecked = selectedValues.includes(itemValue);
 
       return (
@@ -67,7 +61,9 @@ export default function RadixMultiSelect(props) {
           disabled={readonly}
           aria-label="Select multiple values"
         >
-          <span className="qb-radix-multiselect-value">{renderSelectedText()}</span>
+          <span className="qb-radix-multiselect-value">
+            {renderSelectedText()}
+          </span>
           <span className="qb-radix-select-icon">
             <ChevronDownIcon />
           </span>
@@ -76,9 +72,7 @@ export default function RadixMultiSelect(props) {
 
       <Popover.Portal>
         <Popover.Content className="qb-radix-popover-content qb-radix-multiselect-content">
-          <div className="qb-radix-multiselect-options">
-            {renderOptions()}
-          </div>
+          <div className="qb-radix-multiselect-options">{renderOptions()}</div>
         </Popover.Content>
       </Popover.Portal>
     </Popover.Root>

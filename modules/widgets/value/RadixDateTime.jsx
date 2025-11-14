@@ -17,7 +17,7 @@ export default function RadixDateTime(props) {
 
   const formatValue = valueFormat || "YYYY-MM-DD HH:mm:ss";
 
-  const onChange = (e) => {
+  const onChange = e => {
     const val = e.target.value;
     if (!val) {
       setValue(undefined);

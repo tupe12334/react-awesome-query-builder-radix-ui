@@ -2,16 +2,9 @@ import React from "react";
 import * as Switch from "@radix-ui/react-switch";
 
 export default function RadixBoolean(props) {
-  const {
-    value,
-    setValue,
-    labelYes,
-    labelNo,
-    readonly,
-    config,
-  } = props;
+  const { value, setValue, labelYes, labelNo, readonly, config } = props;
 
-  const onToggle = (checked) => {
+  const onToggle = checked => {
     setValue(checked);
   };
 

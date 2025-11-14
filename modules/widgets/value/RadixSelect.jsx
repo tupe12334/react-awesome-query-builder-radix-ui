@@ -1,18 +1,16 @@
 import React from "react";
 import * as Select from "@radix-ui/react-select";
-import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "@radix-ui/react-icons";
+import {
+  CheckIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@radix-ui/react-icons";
 
 export default function RadixSelect(props) {
-  const {
-    value,
-    setValue,
-    listValues,
-    readonly,
-    placeholder,
-    customProps,
-  } = props;
+  const { value, setValue, listValues, readonly, placeholder, customProps } =
+    props;
 
-  const onChange = (val) => {
+  const onChange = val => {
     setValue(val);
   };
 
@@ -20,7 +18,7 @@ export default function RadixSelect(props) {
     if (!listValues) return null;
 
     return listValues.map(item => {
-      const {value: itemValue, title} = item;
+      const { value: itemValue, title } = item;
       return (
         <Select.Item
           key={itemValue}
@@ -37,12 +35,11 @@ export default function RadixSelect(props) {
   };
 
   return (
-    <Select.Root
-      value={value}
-      onValueChange={onChange}
-      disabled={readonly}
-    >
-      <Select.Trigger className="qb-radix-select-trigger" aria-label="Select value">
+    <Select.Root value={value} onValueChange={onChange} disabled={readonly}>
+      <Select.Trigger
+        className="qb-radix-select-trigger"
+        aria-label="Select value"
+      >
         <Select.Value placeholder={placeholder || "Select..."} />
         <Select.Icon className="qb-radix-select-icon">
           <ChevronDownIcon />

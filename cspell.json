@@ -24,7 +24,8 @@
     "rangeslider",
     "grouplabel",
     "WCAG",
-    "spel"
+    "spel",
+    "kiro"
   ],
   "ignorePaths": [
     "node_modules",
@@ -36,6 +37,8 @@
     "coverage",
     "pnpm-lock.yaml",
     "*.min.js",
-    "example"
+    "example",
+    ".claude",
+    ".kiro"
   ]
 }
