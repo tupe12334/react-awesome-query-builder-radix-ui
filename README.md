@@ -373,7 +373,7 @@ Contributions are welcome! Please see [DEVELOPMENT.md](./DEVELOPMENT.md) for dev
 
 ## License
 
-MIT © [Your Name]
+MIT © Ofek Gabay
 
 ## Acknowledgments
 
