@@ -1,5 +1,5 @@
 {
-  "name": "@react-awesome-query-builder/radix-ui",
+  "name": "react-awesome-query-builder-radix-ui",
   "version": "0.1.0",
   "description": "User-friendly query builder for React. Radix UI widgets",
   "keywords": [
